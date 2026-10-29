@@ -30,7 +30,9 @@ function readInputs(): Inputs {
 }
 
 function positionValid(): boolean {
-  return amount.checkValidity() && days.checkValidity() && (position.value !== 'profit' || profit.checkValidity());
+  return Number.isFinite(amount.valueAsNumber) && amount.checkValidity()
+    && Number.isFinite(days.valueAsNumber) && days.checkValidity()
+    && (position.value !== 'profit' || (Number.isFinite(profit.valueAsNumber) && profit.checkValidity()));
 }
 
 function updateFacts() {
@@ -45,7 +47,21 @@ function updateFacts() {
       chip.setAttribute('aria-pressed', 'false');
     }
   }
-  if (!positionValid()) return;
+  const complete = positionValid();
+  element('facts-status').hidden = complete;
+  element('need-marker').hidden = !complete;
+  element('fact-fill').hidden = !complete;
+  if (!complete) {
+    for (const key of ['share', 'held', 'pnl', 'trend']) {
+      element(`${key}-score`).textContent = '—';
+      element(`${key}-description`).textContent = '—';
+    }
+    element('fact-total').textContent = 'Incomplete';
+    for (const id of ['need-fact', 'need-score', 'meter-fact', 'meter-need', 'marker-value']) element(id).textContent = '—';
+    element('fact-fill').style.width = '0%';
+    element('fact-meter').setAttribute('aria-label', 'Demo fact score incomplete. Complete your position to calculate Fact and Need.');
+    return;
+  }
   const facts = getFacts(readInputs());
   for (const key of ['share', 'held', 'pnl', 'trend'] as const) element(`${key}-score`).textContent = `+${facts[key]}`;
   element('share-description').textContent = `${Number(facts.percent.toFixed(4))}% of bag`;

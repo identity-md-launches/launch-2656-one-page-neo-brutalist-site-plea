@@ -50,7 +50,7 @@ npm run build
 
 1. **Read the rules** jumps to the four rule cards. The full scoring table opens below the fact bar.
 2. **Play the simulation** works without a wallet. Initially, 1M PLEA is 10% of a fixed 10M demo bag. At 21 days, a loss and a falling market, the facts total 32 and Need is 37. The default plea produces a granted demo verdict.
-3. Change the amount chips, days, position, profit percentage or trend. Fact points and Need update. Both the 50%-of-bag and 2.5M-Token caps apply, making Max 25% for this illustrative bag.
+3. Change the amount chips, days, position, profit percentage or trend. Fact points and Need update. Empty, out-of-range or step-invalid numeric fields show an incomplete position and clear the breakdown and meter until corrected. Both the 50%-of-bag and 2.5M-Token caps apply, making Max 25% for this illustrative bag.
 4. The counter measures **UTF-8 bytes**, not characters. Empty, multiline, over-280-byte and hidden-character pleas give field-level errors. A plea containing **“give me 50”** runs but scores zero in every seat, including when trying the split-panel scenario.
 5. **Try a hung panel** sets an eligible demo position with Fact 41 / Need 28 and a 15–15 split. It preserves the plea text. Change the inputs or replay to explore another verdict.
 6. **Jump to final 10s** demonstrates the dead-man rule. The clock stops at zero and disables jumping; **Reset clock** restarts the 33-hour demo. This is elapsed-time based, including after a background tab resumes.
@@ -72,32 +72,36 @@ Only the selected wallet’s discovery identifier is stored locally. Reload uses
 
 ## Actual validation
 
-Validation ran against the production export, including a nested gateway path, rather than a development bundle.
+The current revision was checked against the rebuilt production export at a nested `/preview/` path. All five reviewer findings were reproduced and fixed; per-finding responses are in [.imd-responses.json](.imd-responses.json). Detailed coverage, measurements and limitations are in [artifacts/validation.md](artifacts/validation.md), with machine-readable results in [artifacts/revision/checks.json](artifacts/revision/checks.json).
 
-| Check | Result |
+| Check | Current revision result |
 | --- | --- |
 | Production build | Passed, exit 0; self-contained HTML and adjacent PNG generated |
 | TypeScript strict typecheck | Passed, exit 0 |
-| Clean lockfile install outside the repository | Passed with `npm ci` |
-| Pure logic and Chromium interaction groups | 21/21 passed; score boundaries, validation, all verdicts, countdown, wallet guard and lifecycle |
-| Additional interaction/layout groups | 5/5 passed; legacy provider, read failures, revoke fallback, keyboard focus, text enlargement and RTL reflow |
-| Automated accessibility | No WCAG A/AA violations in axe scans at 390 and 1440, and in the granted state |
-| Pinned taste probe | 10/16 raw checks passed; six brief-directed presentation/copy flags reviewed in `artifacts/validation.md` |
-| Reflow | No horizontal overflow at 320, 390, 720, 979, 980 and 1440; first-screen product and primary actions present at 390 |
-| Startup resources | No script errors, missing local files or external startup requests |
-| WebKit | Attempted; browser could not launch because this machine lacks WebKit system libraries |
+| Clean lockfile install outside the repository | Passed with `npm ci`; no manifest or lockfile changes |
+| Chromium regression and interaction groups | 12/12 passed; motion overflow, responsive components, tokens, numeric input recovery, all verdicts, UTF-8 validation, keyboard/wallet disclosure, clock and metadata |
+| Animation reflow | 201 animation frames at each of 320, 390, 719, 720, 979, 980 and 1440px; no horizontal overflow; natural 4.3-second loops also passed at 320, 390 and 1440px |
+| Automated accessibility | Zero axe WCAG A/AA violations in mobile, incomplete-input mobile and desktop states; two manual-review items per scan remain |
+| Pinned taste probe | 10/16 raw checks passed; six retained presentation/copy flags evaluated in `artifacts/validation.md` |
+| First screen at 390px | Product and Read the rules visible; primary action ends at y=383.14px in an 844px viewport |
+| Startup resources | No script errors, failed local files or external startup requests |
+| WebKit | Launch attempted; runtime dependencies unavailable, so no WebKit validation claimed |
 
-Worker commands included `PLEA_TOOLS=/tmp/plea-toolchain npm run build`, `PLEA_TOOLS=/tmp/plea-toolchain npm run typecheck`, the bounded Playwright scripts in `test/scratch/`, and:
+Commands run for this revision:
 
 ```sh
-IMD_PLAYWRIGHT=/tmp/plea-toolchain/node_modules/playwright/index.mjs \
-PLAYWRIGHT_BROWSERS_PATH=/tmp/plea-browsers \
+PLEA_TOOLS=/tmp/plea-revision-toolchain npm run build
+PLEA_TOOLS=/tmp/plea-revision-toolchain npm run typecheck
+PLAYWRIGHT_BROWSERS_PATH=/tmp/plea-revision-browsers \
+node test/scratch/revision-checks.mjs
+IMD_PLAYWRIGHT=/tmp/plea-revision-toolchain/node_modules/playwright/index.mjs \
+PLAYWRIGHT_BROWSERS_PATH=/tmp/plea-revision-browsers \
 node .imd/reads/skills/design-critic/scripts/taste.mjs --out test/scratch/taste --offline
 ```
 
-The pinned probe and temporary fixtures are assignment inputs/scratch and are removed before submission. Their actual results, review and final screenshots are recorded under `artifacts/`; the screenshots use reduced motion to hold decorative stamps still. These are worker self-checks, not an independent certification.
+The bounded regression fixture and pinned probe are temporary assignment inputs/scratch; they are removed before submission. Their actual results and final screenshots are retained under `artifacts/`. Screenshots use reduced motion; the separate animation tests ran with motion enabled. These are worker self-checks, not independent certification. An initial outside-click test targeted text covered by the open wallet panel; using the exposed page gutter corrected that fixture, and all twelve groups passed on rerun without a product change.
 
-**Not verified:** Safari/WebKit rendering, physical phones, screen-reader speech, native browser 200% zoom, real extension permissions, mobile deep-link handoff, live ENS/RPC availability, or social-network crawler behavior. The 200% check enlarged CSS text tokens and is not a native browser zoom test. Wallet lifecycle and successful ENS cases used controlled EIP-1193/RPC fixtures; no real wallet signed or transacted.
+**Not verified in this revision:** Safari/WebKit rendering, physical phones, screen-reader speech, native browser zoom, RTL or enlarged text, real extension connections, ENS/RPC responses, mobile deep-link handoff, or social-network crawler behavior. Wallet code was outside the reported defects; this revision checked its disclosure controls only. No real wallet signed or transacted. The original accepted round's broader fixture results are not claimed as fresh checks.
 
 ## Submission budget and attribution
 

@@ -55,19 +55,19 @@ Body line-height is 1.6; hints use 1.5; heading line-height is 1.01–1.2. Displ
 | Above 1190px | Full header including contract pill; 96px hero; two-column feature areas |
 | 1190px and below | Header contract pill hides; 80px display; more compact card/panel spacing |
 | Below 980px | Hero, demo, letter, objection block and clock stack; main content order remains copy/form before artwork/results |
-| Below 720px | Navigation hides; rule and appeal cards stack; receipt key/value rows stack; 48px hero; 28px section headings |
+| Below 720px | Navigation hides; rule, appeal and fact-example cards stack; receipt key/value rows stack; 48px hero; 28px section headings |
 | Below 720px, board | Best-three column becomes a labelled line under each player; all eight records and all three scores remain visible |
 | Below 360px | 16px gutters, smaller internal gaps; decorative case number hides |
 
-Fact-example cards go from four to two columns below 980px. The six-column jury seat grid remains legible at 320px. The table uses fixed column proportions and wraps player names rather than clipping them. The contract badge, rule tags, objection timeline and demo marker can wrap under enlarged text. The wallet dropdown stays under the trigger, fits within the viewport and scrolls internally on short screens. It is a nonmodal disclosure, not a backdrop dialog.
+Fact-example cards use four columns at 980px and above, two from 720px to 979px, and one below 720px. The six-column jury seat grid remains legible at 320px. The table uses fixed column proportions and wraps player names rather than clipping them. On phones, the rotated PRIZE PAID stamp has a 48px width and wraps at its space into two readable words. The contract badge, rule tags, objection timeline and demo marker can wrap under enlarged text. The wallet dropdown stays under the trigger, fits within the viewport and scrolls internally on short screens. It is a nonmodal disclosure, not a backdrop dialog.
 
-Rendered checks covered widths 320, 390, 720, 979, 980 and 1440, including the 390px first screen. A separate CSS-token text-enlargement stress check and RTL reflow check passed at 390px. Native 200% browser zoom and physical mobile devices were not verified.
+Revision checks covered widths 320, 390, 719, 720, 979, 980 and 1440, including every 20ms of the four-second hero animation and the 390px first screen. The accepted initial round recorded separate CSS-token text-enlargement and RTL reflow checks at 390px; this revision did not repeat them. Native 200% browser zoom and physical mobile devices were not verified.
 
 ## Elevation & depth
 
 `--border` is `2px solid #151515`; `--shadow` is `6px 6px 0 #000`. Borders establish the page’s structure, and hard offset shadows deliberately coexist with them. No gradient, blur or soft shadow is used.
 
-The logo uses a 5px shadow. Stamps use a 3px border and 3px shadow. Clock buttons use a 4px shadow; the black clock card has an 8px hard orange shadow. The hero has an offset orange backing sheet and a paper layer rotated 3° on desktop / 2° on mobile. The logo rotates −2.5°, verdict stamps −9°, appeal stamps −7°, and the receipt 1° on larger screens. Header stacking is 10, wallet panel 30, skip link 100; the header itself is not sticky.
+The logo, stamps and clock buttons reuse the 2px border and 6px hard black shadow tokens. The black clock card retains its orange shadow at 6px 6px with zero blur. The hero has an offset orange backing sheet and a paper layer rotated 3° on desktop / 2° on mobile. Its container clips horizontal decorative overflow while preserving the 2.3→1 stamp animation and four-second loop. The logo rotates −2.5°, verdict stamps −9°, appeal stamps −7°, and the receipt 1° on larger screens. Header stacking is 10, wallet panel 30, skip link 100; the header itself is not sticky.
 
 ## Shapes
 
@@ -81,7 +81,7 @@ Surfaces, fields, tags and actions have sharp corners. The only circles are the 
 | `.logo`, `src/index.html` | Orange rotated wordmark, white gavel, hard shadow; links to the top |
 | `.contract-pill`, `.tag` | Static launch information, rule data and labelled statuses; status hue never replaces a textual label |
 | `.rule-card`, `.number-square` | Number-first rule explanation, body copy, then tag group; two to one columns |
-| `.field`, `.amount-chips` | Real labels, native selects/number fields; selected chip uses orange and `aria-pressed`; errors are associated with inputs and focus the first invalid control |
+| `.field`, `.amount-chips` | Real labels, native selects/required number fields; selected chip uses orange and `aria-pressed`; errors are associated with inputs and focus the first invalid control; incomplete or invalid numeric positions clear all points and Need, hide the meter fill/marker and display a completion hint until valid values return |
 | `.plea-field`, `inspectPlea` | Multilingual entry with UTF-8 byte count, format checklist and recoverable errors; a score-manipulation phrase yields zero scores rather than a fake success |
 | `.seat-grid`, `playSimulation` | Ordered 30-seat list; 90ms fill cadence with 180ms seat pop; red below 20, violet 20–34, green 35+; every filled seat has its numeric score and accessible label |
 | `.verdict-area` | Polite atomic live region; pending, granted, denied and hung states; score, Need and quorum counts accompany the stamp; SOLD is explicitly demo-only |
