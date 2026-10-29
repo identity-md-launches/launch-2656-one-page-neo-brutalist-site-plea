@@ -1,0 +1,8 @@
+# Path budget: this file <=256 bytes; source and dist are always delivered.
+**/node_modules/
+**/.npm/
+**/.cache/
+**/coverage/
+**/*.tsbuildinfo
+**/.playwright-mcp/
+/test/scratch/

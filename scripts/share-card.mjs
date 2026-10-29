@@ -1,0 +1,11 @@
+import { requireTool } from './toolchain.mjs';
+const { chromium } = requireTool('playwright');
+import { readFile } from 'node:fs/promises';
+const font=(await readFile('src/assets/space-grotesk-700.woff2')).toString('base64');
+const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+const page=await browser.newPage({viewport:{width:1200,height:630},deviceScaleFactor:1});
+await page.setContent(`<html><style>@font-face{font-family:Space;src:url(data:font/woff2;base64,${font})}*{box-sizing:border-box}body{margin:0;background:#F3F1E7;color:#151515;font-family:Space;padding:50px 64px;border:12px solid #151515;width:1200px;height:630px}.logo{display:inline-block;background:#FF6A1F;border:3px solid #151515;box-shadow:6px 6px 0 #000;padding:0 13px;font-size:40px;transform:rotate(-2.5deg)}h1{font-size:100px;line-height:1.02;letter-spacing:-6px;max-width:800px;margin:36px 0 0}u{text-decoration-color:#FF6A1F;text-decoration-thickness:12px;text-underline-offset:3px}p{font:22px Space;margin-top:30px}.stamp{position:absolute;right:70px;top:360px;background:#1FBF5B;border:4px solid #151515;padding:8px 18px;box-shadow:6px 6px 0 #000;transform:rotate(-12deg);font-size:42px}.footer{position:absolute;bottom:38px;right:60px;font:16px monospace}</style><body><div class="logo">PLEA</div><h1>Buy <u>freely.</u><br>Sell with a plea.</h1><p>Buying is open. Selling needs a plea.</p><div class="stamp">GRANTED</div><div class="footer">$PLEA · UNISWAP v4 · CONTRACT COMING SOON</div></body></html>`);
+await page.evaluate(()=>document.fonts.ready);
+await page.screenshot({path:'src/assets/share.png'});
+await browser.close();
+console.log('Generated original 1200 × 630 share card.');

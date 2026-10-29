@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F3F1E7">
+  <title>PLEA ($PLEA) · Buying is open. Selling needs a plea.</title>
+  <meta name="description" content="PLEA is a sell-gated meme token on Uniswap v4. Buy freely. Make your case to 30 judges. Explore the rules and play the demo. Contract coming soon.">
+  <meta property="og:title" content="PLEA · Buy freely. Sell with a plea.">
+  <meta property="og:description" content="Buying is open. Selling needs a plea. Meet the Cabal, read the chain, and try the jury simulation. Contract coming soon.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PLEA. Buy freely. Sell with a plea. An orange court file with a green granted stamp.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23151515' d='M6 6h58v58H6z'/%3E%3Cpath fill='%23FF6A1F' stroke='%23151515' stroke-width='3' d='M2 2h56v56H2z'/%3E%3Cpath fill='%23151515' d='M17 13h15c19 0 19 27 0 27h-4v10H17zm11 9v9h5c6 0 6-9 0-9z'/%3E%3C/svg%3E">
+  <!-- INLINE_STYLES -->
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="gavel" viewBox="0 0 32 32"><path d="m10 4 12 12m-8-15 11 11M6 8l11 11m-2-6 12 12M4 27h14" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="envelope" viewBox="0 0 32 24"><path d="M1 1h30v22H1zm0 0 15 12L31 1" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </defs></svg>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#" aria-label="PLEA home">PLEA<svg aria-hidden="true"><use href="#gavel"/></svg></a>
+      <nav aria-label="Main navigation"><a href="#rules">Rules</a><a href="#demo">Demo</a><a href="#appeals">Appeals</a><a href="#board">Board</a><a href="https://x.com/pleaimd" target="_blank" rel="noopener noreferrer">X ↗</a></nav>
+      <div class="header-actions">
+        <span class="contract-pill header-contract"><span class="dot green"></span>Contract: soon</span>
+        <div class="wallet-control">
+          <button class="button orange wallet-trigger" id="wallet-trigger" type="button" aria-expanded="false" aria-controls="wallet-panel"><span class="dot" id="wallet-dot"></span><span id="wallet-label">Connect wallet</span><span aria-hidden="true">⌄</span></button>
+          <section id="wallet-panel" class="wallet-panel" aria-label="Wallet connection" hidden>
+            <div class="wallet-heading"><strong id="wallet-title">Connect a wallet</strong><button type="button" class="close-button" id="wallet-close" aria-label="Close wallet dropdown">×</button></div>
+            <p class="wallet-caption">Read-only. Ethereum only.</p>
+            <div id="wallet-options"></div>
+            <div id="wallet-details" hidden></div>
+            <p class="wallet-message" id="wallet-message" role="status"></p>
+            <p class="wallet-footnote">No signatures. No approvals. No transactions.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div id="network-warning" class="network-warning" hidden><span><strong>Wrong network</strong> · <span id="network-name"></span></span><button type="button" id="switch-network">Switch to Ethereum <span aria-hidden="true">→</span></button><span id="network-error" role="status"></span></div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Buy <span class="underline">freely.</span><br>Sell with<br class="desktop-break"> a plea.</h1>
+        <p class="hero-tagline"><strong>Buying is open. Selling needs a plea.</strong></p>
+        <p class="hero-description">A sell-gated meme token on Uniswap v4.<br>One line to the Cabal. They read the chain.</p>
+        <div class="hero-actions"><a class="button orange" href="#rules">Read the rules <svg aria-hidden="true"><use href="#arrow"/></svg></a><a class="button" href="https://x.com/pleaimd" target="_blank" rel="noopener noreferrer">Follow on X ↗</a></div>
+        <span class="contract-pill hero-contract"><span class="dot green"></span>Contract: coming soon</span>
+      </div>
+      <div class="hero-art">
+        <div class="paper-ghost" aria-hidden="true"></div>
+        <article class="plea-paper" aria-label="Illustrative plea, demo verdict">
+          <div class="paper-top"><svg class="paper-icon" aria-hidden="true"><use href="#gavel"/></svg><span class="mono">PLEA / CASE FILE<br>Demo verdict</span><span class="case-number mono">№ 001</span></div>
+          <div class="paper-body">
+            <p class="paper-label mono">To the Cabal,</p>
+            <p class="plea-quote">“Diamond hands.<br>Very human bills.”</p>
+            <div class="filler-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="hero-stamp stamp granted">GRANTED<svg aria-hidden="true"><use href="#gavel"/></svg></div>
+            <p class="paper-signoff mono">Respectfully,<br>a holder with a case.</p>
+          </div>
+          <div class="paper-tags"><span class="tag">1 LINE</span><span class="tag">280 BYTES</span><span class="tag">ANY LANGUAGE</span></div>
+          <div class="paper-bottom mono"><span>30 judges. One verdict.</span><span>↓ Make your case</span></div>
+        </article>
+      </div>
+    </section>
+
+    <div class="protocol-strip" aria-label="Protocol facts"><div class="wrap protocol-inner"><span><strong>1B</strong> supply</span><span><strong>2.25%</strong> fee</span><span><strong>30</strong> judges</span><span><strong>17</strong> to agree</span><span class="strip-note mono">$PLEA / ETHEREUM</span></div></div>
+
+    <section class="section wrap" id="rules" aria-labelledby="rules-title">
+      <div class="section-heading"><h2 id="rules-title">The exit has<br>a few conditions.</h2><p>You can buy without asking.<br>To sell, put your case on the record.</p></div>
+      <div class="rules-grid">
+        <article class="rule-card"><span class="number-square">01</span><div><h3>Write a plea.</h3><p>One line. 280 bytes. Any language.<br>Make it count. The chain keeps receipts.</p><div class="tags"><span class="tag">YOUR WORDS</span><span class="tag">ON THE RECORD</span></div></div></article>
+        <article class="rule-card"><span class="number-square">02</span><div><h3>Cabal scores it.</h3><p>30 judges score your plea from 0–45.<br>At least 17 must agree on the verdict.</p><div class="tags"><span class="tag">30 JUDGES</span><span class="tag">17 TO AGREE</span></div></div></article>
+        <article class="rule-card"><span class="number-square">03</span><div><h3>Bar from the chain.</h3><p>Your bag, your hold, your P/L, the trend.<br>Facts lower the score your plea needs.</p><div class="tags"><span class="tag orange">NEED = 69 − FACT SCORE</span></div></div></article>
+        <article class="rule-card"><span class="number-square">04</span><div><h3>Get your verdict.</h3><p>Granted? You have 7 minutes to sell.<br>Denied? You get one appeal.</p><div class="tags"><span class="tag granted">GRANTED</span><span class="tag denied">DENIED</span></div></div></article>
+      </div>
+      <div class="rule-footnote"><span class="mono">THE HARD LIMIT</span><p>Sell up to 50% of your bag, capped at 2.5M PLEA per plea. Both limits apply.</p></div>
+    </section>
+
+    <section class="demo-section" id="demo" aria-labelledby="demo-title"><div class="wrap">
+      <div class="section-heading"><div><h2 id="demo-title">Make your case.</h2><p>Try the process. No wallet needed.</p></div><span class="demo-label"><span class="dot"></span>Simulated / demo data</span></div>
+      <div class="demo-panel">
+        <form class="plea-form" id="plea-form" novalidate>
+          <fieldset id="demo-fields"><legend class="sr-only">Simulated position and plea</legend>
+            <div class="form-topline"><strong>Make your case</strong><span class="mono">DEMO BAG: 10M PLEA</span></div>
+            <div class="field"><label for="amount">Amount to sell <span class="muted">(PLEA)</span></label><input id="amount" name="amount" type="number" value="1000000" min="1" max="2500000" step="1" inputmode="numeric" aria-describedby="amount-help amount-error"><div class="amount-chips" aria-label="Share of demo bag"><button type="button" data-share="1" aria-pressed="false">1%</button><button type="button" data-share="10" aria-pressed="true" class="active">10%</button><button type="button" data-share="25" aria-pressed="false">25%</button><button type="button" data-share="max" aria-pressed="false">Max</button></div><p id="amount-help" class="field-hint">Max: 2.5M PLEA (25% of this demo bag).</p><p id="amount-error" class="field-error" hidden></p></div>
+            <div class="form-grid"><div class="field"><label for="days">Days held</label><input type="number" id="days" name="days" value="21" min="0" max="36500" step="1" inputmode="numeric" aria-describedby="days-error"><p id="days-error" class="field-error" hidden></p></div><div class="field"><label for="position">Position</label><select id="position" name="position"><option value="loss">Loss</option><option value="breakeven">Breakeven</option><option value="profit">Profit</option></select></div></div>
+            <div class="form-grid"><div class="field"><label for="trend">Market trend</label><select id="trend" name="trend"><option value="down">Down (&lt; −2%)</option><option value="flat">Flat (−2% to +2%)</option><option value="up">Up (&gt; +2%)</option></select></div><div class="field" id="profit-field" hidden><label for="profit">Profit (%)</label><input type="number" id="profit" name="profit" value="100" min="0" max="1000000" step="0.01" inputmode="decimal" aria-describedby="profit-error"><p id="profit-error" class="field-error" hidden></p></div></div>
+            <div class="field plea-field"><div class="label-row"><label for="plea">Your one-line plea</label><output id="byte-count" for="plea" class="mono">0/280</output></div><textarea id="plea" name="plea" rows="3" dir="auto" aria-describedby="plea-checks plea-error" spellcheck="false">Diamond hands. Very human bills.</textarea><ul class="plea-checks" id="plea-checks"><li id="check-line">✓ One line</li><li id="check-hidden">✓ No hidden chars</li><li id="check-score">✓ No “give me 50” (scores 0)</li></ul><p id="plea-error" class="field-error" hidden></p></div>
+            <div class="fact-breakdown" aria-label="Calculated fact score"><div><span>Share sold <small id="share-description">10% of bag</small></span><strong id="share-score">+16</strong></div><div><span>Time held <small id="held-description">21 days</small></span><strong id="held-score">+3</strong></div><div><span>Profit / loss <small id="pnl-description">At a loss</small></span><strong id="pnl-score">+13</strong></div><div><span>Market trend <small id="trend-description">Falling</small></span><strong id="trend-score">+0</strong></div><div class="fact-total"><strong>Fact score</strong><strong id="fact-total">32<span> / 41</span></strong></div><div class="need-total mono"><span>Need = 69 − <span id="need-fact">32</span></span><strong id="need-score">37</strong></div></div>
+          </fieldset>
+          <div class="demo-actions"><button class="button launch-disabled" type="button" disabled>Live at launch <span aria-hidden="true">↗</span></button><button class="text-action" id="run-simulation" type="submit">Play the simulation <span aria-hidden="true">→</span></button></div>
+          <p class="connection-note">Connecting only reads your address. PLEA will never ask you to sign or approve anything before launch.</p>
+        </form>
+        <div class="jury-panel" id="jury-panel">
+          <div class="jury-header"><svg aria-hidden="true"><use href="#envelope"/></svg><span class="mono" id="jury-state">PENDING</span><span class="mono" id="seat-progress">00 / 30</span></div>
+          <div class="jury-content"><div class="jury-title"><h3>The Cabal is seated.</h3><p id="jury-instruction">Write one line. Let the room decide.</p></div>
+            <ol class="seat-grid" id="seat-grid" aria-label="30 simulated judge scores"></ol>
+            <div class="seat-legend mono"><span><i class="denied"></i>0–19</span><span><i class="appeal"></i>20–34</span><span><i class="granted"></i>35–45</span></div>
+            <div class="verdict-area" id="verdict-area" aria-live="polite" aria-atomic="true"><div class="pending-symbol" aria-hidden="true"><svg><use href="#gavel"/></svg></div><p class="pending-copy">The floor is yours.</p><p class="muted">No judges were disturbed in the making of this demo.</p></div>
+            <div class="jury-bottom"><span class="mono">17 / 30 FOR A VERDICT</span><button class="text-action" type="button" id="split-panel">Try a hung panel ↗</button></div>
+            <p class="demo-disclaimer">Illustrative scores, not AI judging. The demo treats 17 scores meeting Need as approval; 17 below as denial. A split with neither is hung.</p>
+          </div>
+        </div>
+      </div>
+    </div></section>
+
+    <section class="section wrap" id="facts" aria-labelledby="facts-title">
+      <div class="section-heading"><h2 id="facts-title">The chain<br>is your character witness.</h2><p>Good facts lower the bar.<br>Your plea still has to clear it.</p></div>
+      <div class="fact-meter-panel"><div class="meter-heading"><strong>Less to prove.</strong><span class="mono">Demo data · updates with your inputs</span></div><div class="fact-meter" id="fact-meter" role="img" aria-label="Demo fact score 32 of 41; required plea score 37 of 45"><div class="fact-fill" id="fact-fill"></div><div class="need-marker" id="need-marker"><span class="mono">NEED <b id="marker-value">37</b></span></div></div><div class="meter-readouts"><span>Fact <strong id="meter-fact">32</strong></span><span>Need <strong id="meter-need">37</strong></span><span>Max <strong>41</strong></span></div><p class="field-hint">Hatching: fact / 41. Marker: Need on the judge’s 0–45 scale. Need can exceed 45.</p></div>
+      <div class="fact-examples" aria-label="Example fact score: 32, demo data"><article><span class="mono">SHARE SOLD</span><h3>10% of the bag</h3><strong>+16</strong></article><article><span class="mono">TIME HELD</span><h3>21 days</h3><strong>+3</strong></article><article><span class="mono">PROFIT / LOSS</span><h3>Down 34%</h3><strong>+13</strong></article><article><span class="mono">MARKET TREND</span><h3>Falling</h3><strong>+0</strong></article></div>
+      <p class="examples-label mono">Above: a fixed demo example. Fact 32. Need 37.</p>
+      <details class="scoring-rules"><summary>Open the full scoring table <span aria-hidden="true">+</span></summary><div class="scoring-table-wrap"><table><caption>Protocol fact points (0–41). Need = 69 − fact score.</caption><thead><tr><th scope="col">Fact</th><th scope="col">Condition</th><th scope="col">Points</th></tr></thead><tbody><tr><th scope="row" rowspan="3">Share sold</th><td>≤20% of bag</td><td>16</td></tr><tr><td>≤35%</td><td>9</td></tr><tr><td>More than 35%</td><td>3</td></tr><tr><th scope="row" rowspan="4">Held</th><td>≥7 days</td><td>3</td></tr><tr><td>≥3 days</td><td>2</td></tr><tr><td>≥1 day</td><td>1</td></tr><tr><td>Less than 1 day</td><td>0</td></tr><tr><th scope="row" rowspan="6">P/L</th><td>Loss</td><td>13</td></tr><tr><td>Breakeven to ≤50% profit</td><td>12</td></tr><tr><td>≤200% profit</td><td>10</td></tr><tr><td>≤500% profit</td><td>8</td></tr><tr><td>≤1000% profit</td><td>6</td></tr><tr><td>More than 1000% profit</td><td>4</td></tr><tr><th scope="row" rowspan="3">Trend</th><td>Up &gt;2%</td><td>9</td></tr><tr><td>Flat</td><td>5</td></tr><tr><td>Down</td><td>0</td></tr></tbody></table><p class="field-hint">Within each fact, use the highest matching tier. The demo treats −2% to +2% as flat; no sampling interval was specified.</p></div></details>
+    </section>
+
+    <section class="appeals-section" id="appeals" aria-labelledby="appeals-title"><div class="wrap section">
+      <div class="section-heading"><h2 id="appeals-title">Think they<br>got off easy?</h2><p>The verdict isn’t always the last word.<br>But you don’t get infinite last words.</p></div>
+      <div class="appeal-grid"><article class="appeal-card"><span class="number-square">01</span><h3>Denied? One more shot.</h3><p>You get one appeal per plea.<br>Make a better case. Same chain, fresh ears.</p><span class="stamp appeal">APPEAL</span></article><article class="appeal-card"><span class="number-square">02</span><h3>A fresh set of judges.</h3><p>A new 30-judge panel takes a look.<br>A second hearing can change the verdict.</p><span class="stamp denied">OVERRULED</span></article></div>
+      <div class="objection-block"><div><h3>Granted doesn’t mean unchallenged.</h3><p>There’s a 20-minute objection window after approval. A second panel reviews the case. Points can only fall. The sale stays untouched.</p></div><ol class="objection-timeline"><li><span class="timeline-dot granted"></span><strong>Approved</strong><span>Window opens</span></li><li><span class="timeline-dot appeal"></span><strong>20 minutes</strong><span>Object to the score</span></li><li><span class="timeline-dot"></span><strong>Second panel</strong><span>Sale untouched</span></li></ol></div>
+    </div></section>
+
+    <section class="section wrap letter-section" aria-labelledby="letter-title"><div class="letter-intro"><h2 id="letter-title">No site?<br>Plead by letter.</h2><p>The interface isn’t the gate.<br>Your plea can go straight to CabalGate.</p><p>At launch, an approved letter plea sells itself. No second signature. The receipt keeps the story.</p><span class="tag">DIRECT TO THE CHAIN</span><p class="field-hint">Illustration only. Contract and calldata details will be published at launch.</p></div><div class="receipt"><div class="receipt-heading"><span class="mono">ETHERSCAN / RECEIPT MOCKUP</span><span class="tag">DEMO</span></div><dl><div><dt>Transaction hash</dt><dd>0x7a91…c3f2 <span class="muted">[demo]</span></dd></div><div><dt>Status</dt><dd><span class="tag granted">✓ Success</span></dd></div><div><dt>From</dt><dd>0x2e84…91ab <span class="muted">[demo]</span></dd></div><div><dt>To</dt><dd>CabalGate <span class="muted">[coming soon]</span></dd></div><div><dt>Method</dt><dd>pleadByLetter <span class="muted">[illustrative]</span></dd></div><div><dt>Amount</dt><dd>1,000,000 PLEA <span class="muted">[demo]</span></dd></div><div class="input-data"><dt>Input Data</dt><dd>“Diamond hands. Very human bills.”</dd></div></dl><div class="receipt-final"><svg aria-hidden="true"><use href="#arrow"/></svg><strong>Approved plea sells itself.<br>No second signature.</strong></div><p class="receipt-footnote">Demo addresses are abbreviated illustrations, not real destinations. This is not executable calldata.</p></div></section>
+
+    <section class="board-section" id="board" aria-labelledby="board-title"><div class="wrap section">
+      <div class="section-heading"><div><h2 id="board-title">A good case<br>deserves a cut.</h2><p>Every granted plea scores. Top 25 share the pot each season.</p></div><div class="board-season"><strong>15 days.</strong><span class="mono">ONE SEASON / DEMO DATA</span></div></div>
+      <div class="leaderboard"><table><caption class="sr-only">Demo leaderboard: eight illustrative players, points and prizes. No payouts have occurred.</caption><thead><tr><th scope="col">Rank</th><th scope="col">Player</th><th scope="col">Best three</th><th scope="col">Points</th><th scope="col">Prize</th></tr></thead><tbody>
+        <tr class="winner"><td><span class="rank-first">01</span></td><th scope="row"><span class="player-avatar orange">D</span>diamondrent</th><td>42 / 40 / 39</td><td><strong>121</strong></td><td><span class="prize-value">0.82 ETH</span><span class="paid-stamp">PRIZE PAID</span></td></tr>
+        <tr><td>02</td><th scope="row"><span class="player-avatar">B</span>bagdefender</th><td>41 / 39 / 38</td><td><strong>118</strong></td><td>0.68 ETH</td></tr>
+        <tr><td>03</td><th scope="row"><span class="player-avatar">Y</span>yourhonor</th><td>40 / 38 / 37</td><td><strong>115</strong></td><td>0.55 ETH</td></tr>
+        <tr><td>04</td><th scope="row"><span class="player-avatar">H</span>heldmycase</th><td>39 / 37 / 36</td><td><strong>112</strong></td><td>0.44 ETH</td></tr>
+        <tr><td>05</td><th scope="row"><span class="player-avatar">E</span>exhibit_a</th><td>38 / 36 / 35</td><td><strong>109</strong></td><td>0.36 ETH</td></tr>
+        <tr><td>06</td><th scope="row"><span class="player-avatar">O</span>objectionpls</th><td>36 / 35 / 34</td><td><strong>105</strong></td><td>0.29 ETH</td></tr>
+        <tr><td>07</td><th scope="row"><span class="player-avatar">S</span>solewitness</th><td>35 / 33 / 31</td><td><strong>99</strong></td><td>0.23 ETH</td></tr>
+        <tr><td>08</td><th scope="row"><span class="player-avatar">C</span>closingstmt</th><td>33 / 31 / 30</td><td><strong>94</strong></td><td>0.18 ETH</td></tr>
+      </tbody></table><div class="board-note"><span>Ranks 09–25 hidden · 60+ points qualifies</span><span class="mono">DEMO DATA · NO REAL PAYOUTS</span></div></div>
+    </div></section>
+
+    <section class="section wrap clock-section" aria-labelledby="clock-title"><div class="clock-intro"><h2 id="clock-title">Even the Cabal<br>has a deadline.</h2><p>If the Cabal goes 33 hours without a signed verdict, it dies and selling is open forever.</p><p>No judge. No plea. No way back.</p><span class="tag">THE DEAD-MAN RULE</span></div><div class="clock-card"><div class="clock-top mono"><span><span class="dot green" id="clock-dot"></span>CABAL CLOCK</span><span>DEMO TIMER</span></div><div class="countdown" id="countdown" role="timer" aria-label="Demo countdown" aria-live="off">33:00:00</div><p id="clock-status" role="status">Time left without a signed verdict.</p><div class="clock-actions"><button type="button" id="jump-clock" class="button orange">Jump to final 10s</button><button type="button" id="reset-clock" class="button dark-outline">Reset clock</button></div><p class="clock-note mono">Demo only. No live Cabal is being timed.</p></div></section>
+
+    <section class="final-section" aria-labelledby="final-title"><div class="wrap final-inner"><p class="final-tagline">Buying is open. Selling needs a plea.</p><div class="final-row"><h2 id="final-title">Plead<br>your case.</h2><svg class="final-gavel" aria-hidden="true"><use href="#gavel"/></svg></div><div class="final-actions"><span class="button orange coming-label">Coming to Ethereum <span aria-hidden="true">↗</span></span><a class="button dark-outline" href="https://x.com/pleaimd" target="_blank" rel="noopener noreferrer">X · @pleaimd ↗</a></div><footer><span>© 2026 PLEA — original project, no affiliation</span><span class="not-advice">Not financial advice</span><span>Contract: coming soon</span><a href="https://x.com/pleaimd" target="_blank" rel="noopener noreferrer">@pleaimd ↗</a></footer></div></section>
+  </main>
+  <noscript><div class="noscript-note">The rules are available here. Enable JavaScript to play the simulation and use read-only wallet features.</div></noscript>
+  <!-- INLINE_SCRIPT -->
+</body>
+</html>
