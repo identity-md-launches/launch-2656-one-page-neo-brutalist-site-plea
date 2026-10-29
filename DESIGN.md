@@ -4,7 +4,7 @@
 
 PLEA is a launch page for a sell-gated meme token. Its visual idea is a paper case file brought before a jury: large type, numbered rules, plain form fields, a seat grid, receipts and sharply stamped verdicts. The interface uses the brief’s neo-brutalist direction throughout. Documentary detail sits below the marketing headline; controls and simulated data are explicitly labelled.
 
-The source of truth is `src/style.css`, supported by the static markup in `src/index.html` and state handlers in `src/main.ts` and `src/wallet.ts`. The export in `dist/index.html` inlines those sources after compilation.
+The source of truth is `src/style.css`, supported by the static markup in `src/index.html` and state handlers in `src/main.ts`, `src/contract.ts` and `src/wallet.ts`. The export in `dist/index.html` inlines those sources after compilation.
 
 ## Colors
 
@@ -28,7 +28,7 @@ Primary tokens are declared at `src/style.css:6`.
 
 The appeals section uses `#EAE6F2`; the winning table row uses `#EFEFE0`. Dark secondary text is `#C3C0B5` or `#BBB8AF`. Status labels use ink; the violet variant uses `#000` to keep small score text legible while preserving the exact violet fill. Colors always have text/numeric counterparts; green alone does not mean approval.
 
-Measured examples: ink/orange 6.38:1, ink/green 7.53:1, ink/red 4.67:1, ink/sky 8.52:1, muted/paper 6.05:1, error/surface 6.90:1. The exact rendered contrast checks and the violet correction are documented in validation. The page has one light theme and a deliberate dark ending, not a theme switch.
+Current contract surfaces were measured from computed browser colors: ink/paper **16.13:1**, muted/paper **6.05:1**, footer secondary/night **10.28:1**. See `artifacts/checks.json` for the exact pairs. The page has one light theme and a deliberate dark ending, not a theme switch.
 
 ## Typography
 
@@ -44,7 +44,7 @@ Inter’s variable file supplies its used weights. Fallbacks are Arial/sans-seri
 
 The desktop type scale has six values: label **13px**, body **16px**, lead **20px**, card **28px**, title **48px**, display **96px**. Display changes to 80px at 1190px, 72px below 980px, and 48px below 720px. Below 720px, section titles become 28px and card titles 20px. Fixed 28px paper/stamp/logo details reuse that scale. Inputs remain 16px or greater. The timer uses the display step.
 
-Body line-height is 1.6; hints use 1.5; heading line-height is 1.01–1.2. Display tracking is −.065em/−.06em; section headings −.05em; card headings −.035em. Body text is naturally spaced. Headings balance their lines; prose uses pretty wrapping. Changing numbers use tabular figures. Wallet addresses wrap in the detail view; only the compact header address is shortened, with the full address immediately available in the dropdown.
+Body line-height is 1.6; hints use 1.5; heading line-height is 1.01–1.2. Display tracking is −.065em/−.06em; section headings −.05em; card headings −.035em. Body text is naturally spaced. Headings balance their lines; prose uses pretty wrapping. Changing numbers use tabular figures. The token address is 13px IBM Plex Mono with line-height 1.6, no ellipsis, and `dir="ltr"`. A `<wbr>` after the first 20 hexadecimal digits provides a balanced two-line break on phones without inserting a character into the copied value. `overflow-wrap:anywhere` allows further reflow when text grows. Wallet addresses wrap in the detail view; only the compact header address is shortened, with the full address immediately available in the dropdown.
 
 ## Layout
 
@@ -59,9 +59,9 @@ Body line-height is 1.6; hints use 1.5; heading line-height is 1.01–1.2. Displ
 | Below 720px, board | Best-three column becomes a labelled line under each player; all eight records and all three scores remain visible |
 | Below 360px | 16px gutters, smaller internal gaps; decorative case number hides |
 
-Fact-example cards use four columns at 980px and above, two from 720px to 979px, and one below 720px. The six-column jury seat grid remains legible at 320px. The table uses fixed column proportions and wraps player names rather than clipping them. On phones, the rotated PRIZE PAID stamp has a 48px width and wraps at its space into two readable words. The contract badge, rule tags, objection timeline and demo marker can wrap under enlarged text. The wallet dropdown stays under the trigger, fits within the viewport and scrolls internally on short screens. It is a nonmodal disclosure, not a backdrop dialog.
+Fact-example cards use four columns at 980px and above, two from 720px to 979px, and one below 720px. The six-column jury seat grid remains legible at 320px. The table uses fixed column proportions and wraps player names rather than clipping them. On phones, the rotated PRIZE PAID stamp has a 48px width and wraps at its space into two readable words. The contract block uses a 4px orange leading border, 16px inline inset and a 24px top gap (19px below 720px). Its 44px copy button and underlined explorer link share a wrapping flex row with 18px horizontal and 8px vertical gaps. Feedback reserves one line below them. The footer address preserves its checksum casing despite the surrounding uppercase footer. Rule tags, objection timeline and demo marker can wrap under enlarged text. The wallet dropdown stays under the trigger, fits within the viewport and scrolls internally on short screens. It is a nonmodal disclosure, not a backdrop dialog.
 
-Revision checks covered widths 320, 390, 719, 720, 979, 980 and 1440, including every 20ms of the four-second hero animation and the 390px first screen. The accepted initial round recorded separate CSS-token text-enlargement and RTL reflow checks at 390px; this revision did not repeat them. Native 200% browser zoom and physical mobile devices were not verified.
+Current checks cover 320, 390, 719, 720, 979, 980, 1190 and 1440px. The 390 × 844 first-screen screenshot shows the product, Read the rules, the full contract address and Copy address. Contract reflow was also checked with doubled label text in an RTL document. Native 200% browser zoom, full-site RTL behavior and physical mobile devices were not verified. Full coverage and limitations are in `artifacts/validation.md`.
 
 ## Elevation & depth
 
@@ -79,7 +79,9 @@ Surfaces, fields, tags and actions have sharp corners. The only circles are the 
 | --- | --- |
 | `.button`, `src/style.css` | Orange primary, neutral secondary, dark outlined secondary; 48px baseline height; press translates 3px and reduces shadow to 1px over 100ms; hover and visible keyboard focus |
 | `.logo`, `src/index.html` | Orange rotated wordmark, white gavel, hard shadow; links to the top |
-| `.contract-pill`, `.tag` | Static launch information, rule data and labelled statuses; status hue never replaces a textual label |
+| `.contract-pill`, `.tag` | Header contract link, rule data and labelled statuses; status hue never replaces a textual label |
+| `.token-contract`, `.contract-copy`, `setupContract` | Full $PLEA Ethereum address, neutral copy button and Etherscan link; pending clipboard write disables the button, success announces “Address copied.”, and failure focuses/selects the full visible address with a manual-copy instruction; no automatic timeout; `src/contract.ts` |
+| `.footer-contract` | Full address and chain, linked to Etherscan; preserves casing, wraps without clipping, sky keyboard outline on the dark footer |
 | `.rule-card`, `.number-square` | Number-first rule explanation, body copy, then tag group; two to one columns |
 | `.field`, `.amount-chips` | Real labels, native selects/required number fields; selected chip uses orange and `aria-pressed`; errors are associated with inputs and focus the first invalid control; incomplete or invalid numeric positions clear all points and Need, hide the meter fill/marker and display a completion hint until valid values return |
 | `.plea-field`, `inspectPlea` | Multilingual entry with UTF-8 byte count, format checklist and recoverable errors; a score-manipulation phrase yields zero scores rather than a fake success |
@@ -99,9 +101,9 @@ The hero stamp loops every 4 seconds from scale 2.3 to 1. Seat/chip transitions 
 
 - Begin another content block with `.wrap` / `.section`, a sentence-case heading and one explanatory paragraph. Reuse the six type roles and existing gutters.
 - Use orange for a primary action or selected chip, and the status colors for their named verdicts. Put black text on violet score tiles.
-- Keep protocol rules, simulations and real connected-wallet data distinct. Preserve “coming soon” until an actual contract is supplied.
+- Keep protocol rules, simulations and real connected-wallet data distinct. Use the supplied $PLEA token address exactly: `0x93fdf8024C69e33F820Bd0f7C90b209dDd447b6c`. The token address does not configure CabalGate or enable live selling.
 - Preserve all three score values when adapting the board. Preserve full addresses in wallet details.
 - Do not add rounded cards, gradients, blurred shadows, icon fonts, remote font loaders, decorative kicker headings or a new color system.
-- Do not add signing, approval, permit or transaction methods to the pre-launch wallet allowlist.
+- Do not add signing, approval, permit or transaction methods to the read-only wallet allowlist.
 
 For another section, add semantic markup to `src/index.html`, reuse the nearest existing component, keep new interaction state in a TypeScript module, then rebuild the self-contained export and check its mobile layout. The current system is a set of CSS/DOM patterns, not a React component library.

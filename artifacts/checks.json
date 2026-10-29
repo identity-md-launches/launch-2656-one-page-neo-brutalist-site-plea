@@ -1,0 +1,421 @@
+{
+  "checks": [
+    {
+      "name": "Metadata, complete address and exact explorer destinations",
+      "passed": true
+    },
+    {
+      "name": "Responsive reflow, full address and 390px first screen",
+      "passed": true,
+      "evidence": [
+        {
+          "width": 320,
+          "scrollWidth": 320,
+          "primary": {
+            "x": 16,
+            "y": 386.578125,
+            "width": 141,
+            "height": 46,
+            "bottom": 432.578125,
+            "right": 157
+          },
+          "address": {
+            "x": 36,
+            "y": 478.375,
+            "width": 268,
+            "height": 41.59375,
+            "bottom": 519.96875,
+            "right": 304
+          },
+          "copy": {
+            "x": 36,
+            "y": 531.96875,
+            "width": 116,
+            "height": 44,
+            "bottom": 575.96875,
+            "right": 152
+          },
+          "contract": {
+            "x": 16,
+            "y": 451.578125,
+            "width": 288,
+            "height": 153.1875,
+            "bottom": 604.765625,
+            "right": 304
+          }
+        },
+        {
+          "width": 390,
+          "scrollWidth": 390,
+          "primary": {
+            "x": 20,
+            "y": 337.140625,
+            "width": 154,
+            "height": 46,
+            "bottom": 383.140625,
+            "right": 174
+          },
+          "address": {
+            "x": 40,
+            "y": 428.9375,
+            "width": 330,
+            "height": 41.59375,
+            "bottom": 470.53125,
+            "right": 370
+          },
+          "copy": {
+            "x": 40,
+            "y": 482.53125,
+            "width": 116,
+            "height": 44,
+            "bottom": 526.53125,
+            "right": 156
+          },
+          "contract": {
+            "x": 20,
+            "y": 402.140625,
+            "width": 350,
+            "height": 153.1875,
+            "bottom": 555.328125,
+            "right": 370
+          }
+        },
+        {
+          "width": 719,
+          "scrollWidth": 719,
+          "primary": {
+            "x": 20,
+            "y": 337.140625,
+            "width": 154,
+            "height": 46,
+            "bottom": 383.140625,
+            "right": 174
+          },
+          "address": {
+            "x": 40,
+            "y": 428.9375,
+            "width": 640,
+            "height": 20.796875,
+            "bottom": 449.734375,
+            "right": 680
+          },
+          "copy": {
+            "x": 40,
+            "y": 461.734375,
+            "width": 116,
+            "height": 44,
+            "bottom": 505.734375,
+            "right": 156
+          },
+          "contract": {
+            "x": 20,
+            "y": 402.140625,
+            "width": 660,
+            "height": 132.390625,
+            "bottom": 534.53125,
+            "right": 680
+          }
+        },
+        {
+          "width": 720,
+          "scrollWidth": 720,
+          "primary": {
+            "x": 32,
+            "y": 434.625,
+            "width": 204,
+            "height": 52,
+            "bottom": 486.625,
+            "right": 236
+          },
+          "address": {
+            "x": 52,
+            "y": 537.421875,
+            "width": 636,
+            "height": 20.796875,
+            "bottom": 558.21875,
+            "right": 688
+          },
+          "copy": {
+            "x": 52,
+            "y": 570.21875,
+            "width": 116,
+            "height": 44,
+            "bottom": 614.21875,
+            "right": 168
+          },
+          "contract": {
+            "x": 32,
+            "y": 510.625,
+            "width": 656,
+            "height": 132.390625,
+            "bottom": 643.015625,
+            "right": 688
+          }
+        },
+        {
+          "width": 979,
+          "scrollWidth": 979,
+          "primary": {
+            "x": 121.5,
+            "y": 434.625,
+            "width": 204,
+            "height": 52,
+            "bottom": 486.625,
+            "right": 325.5
+          },
+          "address": {
+            "x": 141.5,
+            "y": 537.421875,
+            "width": 640,
+            "height": 20.796875,
+            "bottom": 558.21875,
+            "right": 781.5
+          },
+          "copy": {
+            "x": 141.5,
+            "y": 570.21875,
+            "width": 116,
+            "height": 44,
+            "bottom": 614.21875,
+            "right": 257.5
+          },
+          "contract": {
+            "x": 121.5,
+            "y": 510.625,
+            "width": 660,
+            "height": 132.390625,
+            "bottom": 643.015625,
+            "right": 781.5
+          }
+        },
+        {
+          "width": 980,
+          "scrollWidth": 980,
+          "primary": {
+            "x": 40,
+            "y": 556.578125,
+            "width": 192,
+            "height": 52,
+            "bottom": 608.578125,
+            "right": 232
+          },
+          "address": {
+            "x": 60,
+            "y": 659.375,
+            "width": 434.65625,
+            "height": 20.796875,
+            "bottom": 680.171875,
+            "right": 494.65625
+          },
+          "copy": {
+            "x": 60,
+            "y": 692.171875,
+            "width": 116,
+            "height": 44,
+            "bottom": 736.171875,
+            "right": 176
+          },
+          "contract": {
+            "x": 40,
+            "y": 632.578125,
+            "width": 454.65625,
+            "height": 132.390625,
+            "bottom": 764.96875,
+            "right": 494.65625
+          }
+        },
+        {
+          "width": 1190,
+          "scrollWidth": 1190,
+          "primary": {
+            "x": 40,
+            "y": 556.578125,
+            "width": 192,
+            "height": 52,
+            "bottom": 608.578125,
+            "right": 232
+          },
+          "address": {
+            "x": 60,
+            "y": 659.375,
+            "width": 544.65625,
+            "height": 20.796875,
+            "bottom": 680.171875,
+            "right": 604.65625
+          },
+          "copy": {
+            "x": 60,
+            "y": 692.171875,
+            "width": 116,
+            "height": 44,
+            "bottom": 736.171875,
+            "right": 176
+          },
+          "contract": {
+            "x": 40,
+            "y": 632.578125,
+            "width": 564.65625,
+            "height": 132.390625,
+            "bottom": 764.96875,
+            "right": 604.65625
+          }
+        },
+        {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "primary": {
+            "x": 120,
+            "y": 605.046875,
+            "width": 204,
+            "height": 52,
+            "bottom": 657.046875,
+            "right": 324
+          },
+          "address": {
+            "x": 140,
+            "y": 707.84375,
+            "width": 577.140625,
+            "height": 20.796875,
+            "bottom": 728.640625,
+            "right": 717.140625
+          },
+          "copy": {
+            "x": 140,
+            "y": 740.640625,
+            "width": 116,
+            "height": 44,
+            "bottom": 784.640625,
+            "right": 256
+          },
+          "contract": {
+            "x": 120,
+            "y": 681.046875,
+            "width": 597.140625,
+            "height": 132.390625,
+            "bottom": 813.4375,
+            "right": 717.140625
+          }
+        }
+      ]
+    },
+    {
+      "name": "Keyboard order and visible contract focus",
+      "passed": true
+    },
+    {
+      "name": "Keyboard copy writes the exact checksummed address",
+      "passed": true
+    },
+    {
+      "name": "Clipboard rejection selects the full address and permits retry",
+      "passed": true
+    },
+    {
+      "name": "Missing Clipboard API retains manual recovery",
+      "passed": true
+    },
+    {
+      "name": "Etherscan link opens the supplied token in a separate tab",
+      "passed": true,
+      "evidence": "External destination intercepted locally; external Etherscan content not tested."
+    },
+    {
+      "name": "Rules navigation and scoring disclosure",
+      "passed": true
+    },
+    {
+      "name": "Simulator granted, denied and hung verdicts",
+      "passed": true
+    },
+    {
+      "name": "Form errors, numeric recovery and UTF-8 bytes",
+      "passed": true
+    },
+    {
+      "name": "Wallet disclosure closes with Escape and restores focus",
+      "passed": true
+    },
+    {
+      "name": "Demo clock jump, expiration and reset",
+      "passed": true
+    },
+    {
+      "name": "Automated accessibility in mobile, fallback and desktop states",
+      "passed": true,
+      "evidence": [
+        {
+          "state": "mobile",
+          "violations": [],
+          "incomplete": [
+            "aria-prohibited-attr",
+            "color-contrast"
+          ]
+        },
+        {
+          "state": "copy-fallback",
+          "violations": [],
+          "incomplete": [
+            "aria-prohibited-attr",
+            "color-contrast"
+          ]
+        },
+        {
+          "state": "desktop",
+          "violations": [],
+          "incomplete": [
+            "aria-prohibited-attr",
+            "color-contrast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rendered address and control contrast",
+      "passed": true,
+      "evidence": [
+        {
+          "selector": "token-address",
+          "foreground": "rgb(21, 21, 21)",
+          "background": "rgb(243, 241, 231)",
+          "ratio": 16.13
+        },
+        {
+          "selector": "copy-contract",
+          "foreground": "rgb(21, 21, 21)",
+          "background": "rgb(243, 241, 231)",
+          "ratio": 16.13
+        },
+        {
+          "selector": "contract-explorer",
+          "foreground": "rgb(21, 21, 21)",
+          "background": "rgb(243, 241, 231)",
+          "ratio": 16.13
+        },
+        {
+          "selector": "contract-feedback",
+          "foreground": "rgb(91, 91, 82)",
+          "background": "rgb(243, 241, 231)",
+          "ratio": 6.05
+        },
+        {
+          "selector": "footer-contract",
+          "foreground": "rgb(195, 192, 181)",
+          "background": "rgb(18, 18, 18)",
+          "ratio": 10.28
+        }
+      ]
+    },
+    {
+      "name": "Address reflow under enlarged text and RTL",
+      "passed": true,
+      "evidence": "Address and its controls checked with 26px label text in an RTL document; not native browser zoom or a whole-site RTL audit."
+    },
+    {
+      "name": "No startup resource errors or external startup requests",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "WebKit could not launch: the host lacks required system libraries. Safari rendering and interactions were not verified."
+  ]
+}

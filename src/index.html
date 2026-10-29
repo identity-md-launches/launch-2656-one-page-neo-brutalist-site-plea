@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F3F1E7">
   <title>PLEA ($PLEA) · Buying is open. Selling needs a plea.</title>
-  <meta name="description" content="PLEA is a sell-gated meme token on Uniswap v4. Buy freely. Make your case to 30 judges. Explore the rules and play the demo. Contract coming soon.">
+  <meta name="description" content="PLEA ($PLEA) is a sell-gated meme token on Uniswap v4. Find the Ethereum contract address, read the rules, and try the plea simulation.">
   <meta property="og:title" content="PLEA · Buy freely. Sell with a plea.">
-  <meta property="og:description" content="Buying is open. Selling needs a plea. Meet the Cabal, read the chain, and try the jury simulation. Contract coming soon.">
+  <meta property="og:description" content="Buying is open. Selling needs a plea. Find the $PLEA Ethereum contract, read the rules, and try the jury simulation.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="./share.png">
   <meta property="og:image:width" content="1200">
@@ -30,7 +30,7 @@
       <a class="logo" href="#" aria-label="PLEA home">PLEA<svg aria-hidden="true"><use href="#gavel"/></svg></a>
       <nav aria-label="Main navigation"><a href="#rules">Rules</a><a href="#demo">Demo</a><a href="#appeals">Appeals</a><a href="#board">Board</a><a href="https://x.com/pleaimd" target="_blank" rel="noopener noreferrer">X ↗</a></nav>
       <div class="header-actions">
-        <span class="contract-pill header-contract"><span class="dot green"></span>Contract: soon</span>
+        <a class="contract-pill header-contract" href="https://etherscan.io/token/0x93fdf8024C69e33F820Bd0f7C90b209dDd447b6c" target="_blank" rel="noopener noreferrer">$PLEA contract ↗</a>
         <div class="wallet-control">
           <button class="button orange wallet-trigger" id="wallet-trigger" type="button" aria-expanded="false" aria-controls="wallet-panel"><span class="dot" id="wallet-dot"></span><span id="wallet-label">Connect wallet</span><span aria-hidden="true">⌄</span></button>
           <section id="wallet-panel" class="wallet-panel" aria-label="Wallet connection" hidden>
@@ -54,7 +54,15 @@
         <p class="hero-tagline"><strong>Buying is open. Selling needs a plea.</strong></p>
         <p class="hero-description">A sell-gated meme token on Uniswap v4.<br>One line to the Cabal. They read the chain.</p>
         <div class="hero-actions"><a class="button orange" href="#rules">Read the rules <svg aria-hidden="true"><use href="#arrow"/></svg></a><a class="button" href="https://x.com/pleaimd" target="_blank" rel="noopener noreferrer">Follow on X ↗</a></div>
-        <span class="contract-pill hero-contract"><span class="dot green"></span>Contract: coming soon</span>
+        <div class="token-contract" id="contract" role="group" aria-label="$PLEA contract address">
+          <p class="contract-label">$PLEA · Ethereum</p>
+          <code id="token-address" dir="ltr" tabindex="-1">0x93fdf8024C69e33F820B<wbr>d0f7C90b209dDd447b6c</code>
+          <div class="contract-actions">
+            <button class="button contract-copy" id="copy-contract" type="button" aria-label="Copy address for $PLEA" aria-describedby="contract-feedback">Copy address</button>
+            <a class="contract-explorer" href="https://etherscan.io/token/0x93fdf8024C69e33F820Bd0f7C90b209dDd447b6c" target="_blank" rel="noopener noreferrer">View on Etherscan ↗</a>
+          </div>
+          <p class="contract-feedback" id="contract-feedback" role="status" aria-atomic="true"></p>
+        </div>
       </div>
       <div class="hero-art">
         <div class="paper-ghost" aria-hidden="true"></div>
@@ -100,7 +108,7 @@
             <p id="facts-status" class="field-hint" role="status" hidden>Complete your position to calculate Fact and Need.</p>
           </fieldset>
           <div class="demo-actions"><button class="button launch-disabled" type="button" disabled>Live at launch <span aria-hidden="true">↗</span></button><button class="text-action" id="run-simulation" type="submit">Play the simulation <span aria-hidden="true">→</span></button></div>
-          <p class="connection-note">Connecting only reads your address. PLEA will never ask you to sign or approve anything before launch.</p>
+          <p class="connection-note">This selling flow is a demo. Connecting only reads your address. This site never asks for signatures or approvals.</p>
         </form>
         <div class="jury-panel" id="jury-panel">
           <div class="jury-header"><svg aria-hidden="true"><use href="#envelope"/></svg><span class="mono" id="jury-state">PENDING</span><span class="mono" id="seat-progress">00 / 30</span></div>
@@ -129,7 +137,7 @@
       <div class="objection-block"><div><h3>Granted doesn’t mean unchallenged.</h3><p>There’s a 20-minute objection window after approval. A second panel reviews the case. Points can only fall. The sale stays untouched.</p></div><ol class="objection-timeline"><li><span class="timeline-dot granted"></span><strong>Approved</strong><span>Window opens</span></li><li><span class="timeline-dot appeal"></span><strong>20 minutes</strong><span>Object to the score</span></li><li><span class="timeline-dot"></span><strong>Second panel</strong><span>Sale untouched</span></li></ol></div>
     </div></section>
 
-    <section class="section wrap letter-section" aria-labelledby="letter-title"><div class="letter-intro"><h2 id="letter-title">No site?<br>Plead by letter.</h2><p>The interface isn’t the gate.<br>Your plea can go straight to CabalGate.</p><p>At launch, an approved letter plea sells itself. No second signature. The receipt keeps the story.</p><span class="tag">DIRECT TO THE CHAIN</span><p class="field-hint">Illustration only. Contract and calldata details will be published at launch.</p></div><div class="receipt"><div class="receipt-heading"><span class="mono">ETHERSCAN / RECEIPT MOCKUP</span><span class="tag">DEMO</span></div><dl><div><dt>Transaction hash</dt><dd>0x7a91…c3f2 <span class="muted">[demo]</span></dd></div><div><dt>Status</dt><dd><span class="tag granted">✓ Success</span></dd></div><div><dt>From</dt><dd>0x2e84…91ab <span class="muted">[demo]</span></dd></div><div><dt>To</dt><dd>CabalGate <span class="muted">[coming soon]</span></dd></div><div><dt>Method</dt><dd>pleadByLetter <span class="muted">[illustrative]</span></dd></div><div><dt>Amount</dt><dd>1,000,000 PLEA <span class="muted">[demo]</span></dd></div><div class="input-data"><dt>Input Data</dt><dd>“Diamond hands. Very human bills.”</dd></div></dl><div class="receipt-final"><svg aria-hidden="true"><use href="#arrow"/></svg><strong>Approved plea sells itself.<br>No second signature.</strong></div><p class="receipt-footnote">Demo addresses are abbreviated illustrations, not real destinations. This is not executable calldata.</p></div></section>
+    <section class="section wrap letter-section" aria-labelledby="letter-title"><div class="letter-intro"><h2 id="letter-title">No site?<br>Plead by letter.</h2><p>The interface isn’t the gate.<br>Your plea can go straight to CabalGate.</p><p>An approved letter plea sells itself. No second signature. The receipt keeps the story.</p><span class="tag">DIRECT TO THE CHAIN</span><p class="field-hint">Illustration only. CabalGate address and calldata are not configured on this site.</p></div><div class="receipt"><div class="receipt-heading"><span class="mono">ETHERSCAN / RECEIPT MOCKUP</span><span class="tag">DEMO</span></div><dl><div><dt>Transaction hash</dt><dd>0x7a91…c3f2 <span class="muted">[demo]</span></dd></div><div><dt>Status</dt><dd><span class="tag granted">✓ Success</span></dd></div><div><dt>From</dt><dd>0x2e84…91ab <span class="muted">[demo]</span></dd></div><div><dt>To</dt><dd>CabalGate <span class="muted">[not configured]</span></dd></div><div><dt>Method</dt><dd>pleadByLetter <span class="muted">[illustrative]</span></dd></div><div><dt>Amount</dt><dd>1,000,000 PLEA <span class="muted">[demo]</span></dd></div><div class="input-data"><dt>Input Data</dt><dd>“Diamond hands. Very human bills.”</dd></div></dl><div class="receipt-final"><svg aria-hidden="true"><use href="#arrow"/></svg><strong>Approved plea sells itself.<br>No second signature.</strong></div><p class="receipt-footnote">Demo addresses are abbreviated illustrations, not real destinations. This is not executable calldata.</p></div></section>
 
     <section class="board-section" id="board" aria-labelledby="board-title"><div class="wrap section">
       <div class="section-heading"><div><h2 id="board-title">A good case<br>deserves a cut.</h2><p>Every granted plea scores. Top 25 share the pot each season.</p></div><div class="board-season"><strong>15 days.</strong><span class="mono">ONE SEASON / DEMO DATA</span></div></div>
@@ -147,7 +155,7 @@
 
     <section class="section wrap clock-section" aria-labelledby="clock-title"><div class="clock-intro"><h2 id="clock-title">Even the Cabal<br>has a deadline.</h2><p>If the Cabal goes 33 hours without a signed verdict, it dies and selling is open forever.</p><p>No judge. No plea. No way back.</p><span class="tag">THE DEAD-MAN RULE</span></div><div class="clock-card"><div class="clock-top mono"><span><span class="dot green" id="clock-dot"></span>CABAL CLOCK</span><span>DEMO TIMER</span></div><div class="countdown" id="countdown" role="timer" aria-label="Demo countdown" aria-live="off">33:00:00</div><p id="clock-status" role="status">Time left without a signed verdict.</p><div class="clock-actions"><button type="button" id="jump-clock" class="button orange">Jump to final 10s</button><button type="button" id="reset-clock" class="button dark-outline">Reset clock</button></div><p class="clock-note mono">Demo only. No live Cabal is being timed.</p></div></section>
 
-    <section class="final-section" aria-labelledby="final-title"><div class="wrap final-inner"><p class="final-tagline">Buying is open. Selling needs a plea.</p><div class="final-row"><h2 id="final-title">Plead<br>your case.</h2><svg class="final-gavel" aria-hidden="true"><use href="#gavel"/></svg></div><div class="final-actions"><span class="button orange coming-label">Coming to Ethereum <span aria-hidden="true">↗</span></span><a class="button dark-outline" href="https://x.com/pleaimd" target="_blank" rel="noopener noreferrer">X · @pleaimd ↗</a></div><footer><span>© 2026 PLEA — original project, no affiliation</span><span class="not-advice">Not financial advice</span><span>Contract: coming soon</span><a href="https://x.com/pleaimd" target="_blank" rel="noopener noreferrer">@pleaimd ↗</a></footer></div></section>
+    <section class="final-section" aria-labelledby="final-title"><div class="wrap final-inner"><p class="final-tagline">Buying is open. Selling needs a plea.</p><div class="final-row"><h2 id="final-title">Plead<br>your case.</h2><svg class="final-gavel" aria-hidden="true"><use href="#gavel"/></svg></div><div class="final-actions"><a class="button orange" href="https://etherscan.io/token/0x93fdf8024C69e33F820Bd0f7C90b209dDd447b6c" target="_blank" rel="noopener noreferrer">View $PLEA contract <span aria-hidden="true">↗</span></a><a class="button dark-outline" href="https://x.com/pleaimd" target="_blank" rel="noopener noreferrer">X · @pleaimd ↗</a></div><footer><span>© 2026 PLEA · original project, no affiliation</span><span class="not-advice">Not financial advice</span><a class="footer-contract" href="https://etherscan.io/token/0x93fdf8024C69e33F820Bd0f7C90b209dDd447b6c" target="_blank" rel="noopener noreferrer">$PLEA contract · Ethereum<br><code dir="ltr">0x93fdf8024C69e33F820B<wbr>d0f7C90b209dDd447b6c</code></a><a href="https://x.com/pleaimd" target="_blank" rel="noopener noreferrer">@pleaimd ↗</a></footer></div></section>
   </main>
   <noscript><div class="noscript-note">The rules are available here. Enable JavaScript to play the simulation and use read-only wallet features.</div></noscript>
   <!-- INLINE_SCRIPT -->

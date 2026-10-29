@@ -1,5 +1,6 @@
 import { RULES, getFacts, inspectPlea, makeScores, getVerdict, formatClock, type Inputs, type DemoScenario, type Position, type Trend } from './scoring';
 import { setupWallet } from './wallet';
+import { setupContract } from './contract';
 
 export function element<T extends HTMLElement = HTMLElement>(id: string): T {
   const found = document.getElementById(id);
@@ -265,4 +266,4 @@ for (const row of document.querySelectorAll<HTMLTableRowElement>('.leaderboard t
   row.cells[1].append(best);
 }
 
-resetSeats(); updateFacts(); updatePlea(); updateClock(); setupWallet();
+resetSeats(); updateFacts(); updatePlea(); updateClock(); setupWallet(); setupContract();

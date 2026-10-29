@@ -1,0 +1,116 @@
+{
+  "checks": [
+    {
+      "name": "render",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 11473,
+      "output": "renders, no script errors or missing local files"
+    },
+    {
+      "name": "layout",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 0,
+      "output": "no horizontal scroll at 320, 390 or 1440\nno text box overlaps another\nno floating control covers text\nno text cut off by overflow: hidden"
+    },
+    {
+      "name": "targets",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 1,
+      "output": "all 25 controls at least 24px or spaced at 390\n2 under the 44px comfortable size"
+    },
+    {
+      "name": "contrast",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 0,
+      "output": "all measured text meets 4.5:1 (3:1 large)"
+    },
+    {
+      "name": "casing",
+      "passed": false,
+      "exitCode": 1,
+      "durationMs": 1,
+      "output": "17 all-caps text boxes in content:\n1440px: div.hero-art:nth-of-type(2) > article.plea-paper > div.paper-tags:nth-of-type(3) > span.tag:nth-of-type(3) \"ANY LANGUAGE\"\n1440px: article.rule-card:nth-of-type(1) > div > div.tags > span.tag:nth-of-type(1) \"YOUR WORDS\"\n1440px: article.rule-card:nth-of-type(1) > div > div.tags > span.tag:nth-of-type(2) \"ON THE RECORD\"\n1440px: article.rule-card:nth-of-type(3) > div > div.tags > span.tag.orange \"NEED = 69 \u2212 FACT SCORE\"\n1440px: #rules > div.rule-footnote:nth-of-type(3) > span.mono \"THE HARD LIMIT\"\n1440px: #jury-panel > div.jury-content:nth-of-type(2) > div.jury-bottom:nth-of-type(4) > span.mono \"17 / 30 FOR A VERDICT\"\n1440px: #facts > div.fact-examples:nth-of-type(3) > article:nth-of-type(1) > span.mono \"SHARE SOLD\"\n1440px: #facts > div.fact-examples:nth-of-type(3) > article:nth-of-type(3) > span.mono \"PROFIT / LOSS\"\n\u2026 9 more\n3 more in header, nav or footer (brand chrome, not counted)"
+    },
+    {
+      "name": "tracking",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 1,
+      "output": "letter-spacing natural in content (display type may run tight)"
+    },
+    {
+      "name": "eyebrows",
+      "passed": false,
+      "exitCode": 1,
+      "durationMs": 5,
+      "output": "6 kicker labels above headings:\n1440px: \"To the Cabal,\" above \"\u201cDiamond hands. Very human bills.\u201d\" (div.hero-art:nth-of-type(2) > article.plea-paper > div.paper-body:nth-of-type(2) > p.paper-label.mono:nth-of-type(1))\n1440px: \"CABAL CLOCK\" above \"32:59:59\" (section.section.wrap:nth-of-type(8) > div.clock-card:nth-of-type(2) > div.clock-top.mono:nth-of-type(1) > span:nth-of-type(1))\n1440px: \"SHARE SOLD\" above \"10% of the bag\" (#facts > div.fact-examples:nth-of-type(3) > article:nth-of-type(1) > span.mono)\n1440px: \"TIME HELD\" above \"21 days\" (#facts > div.fact-examples:nth-of-type(3) > article:nth-of-type(2) > span.mono)\n1440px: \"PROFIT / LOSS\" above \"Down 34%\" (#facts > div.fact-examples:nth-of-type(3) > article:nth-of-type(3) > span.mono)\n1440px: \"MARKET TREND\" above \"Falling\" (#facts > div.fact-examples:nth-of-type(3) > article:nth-of-type(4) > span.mono)"
+    },
+    {
+      "name": "type-sizes",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 1,
+      "output": "390: 5 sizes in use, 5 with one-offs (13px\u00d7200, 16px\u00d746, 20px\u00d716, 28px\u00d716, 48px\u00d74)\n1440: 6 sizes in use, 6 with one-offs (13px\u00d7193, 16px\u00d745, 20px\u00d732, 28px\u00d712, 48px\u00d712, 96px\u00d74)\nbar: 6 sizes used more than once, 8 counting one-offs, per width"
+    },
+    {
+      "name": "type-faces",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 3,
+      "output": "families (3): space grotesk, inter, ibm plex mono\nweights (3): 400, 600, 700"
+    },
+    {
+      "name": "glyphs",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 0,
+      "output": "no em dashes or emoji in text"
+    },
+    {
+      "name": "slogans",
+      "passed": false,
+      "exitCode": 1,
+      "durationMs": 0,
+      "output": "15 two-beat lines; a stack is four or more, so keep the best and cut the rest:\n\"Buy freely. Sell with a plea.\" (#hero-title)\n\"Buying is open. Selling needs a plea.\" (#main > section.final-section:nth-of-type(9) > div.wrap.final-inner > p.final-tagline)\n\"\u201cDiamond hands. Very human bills.\u201d\" (div.hero-art:nth-of-type(2) > article.plea-paper > div.paper-body:nth-of-type(2) > p.plea-quote:nth-of-type(2))\n\"30 judges. One verdict. \u2193 Make your case\" (section.hero.wrap:nth-of-type(1) > div.hero-art:nth-of-type(2) > article.plea-paper > div.paper-bottom.mono:nth-of-type(4))\n\"30 judges. One verdict.\" (div.hero-art:nth-of-type(2) > article.plea-paper > div.paper-bottom.mono:nth-of-type(4) > span:nth-of-type(1))\n\"Make your case. Try the process. No wallet needed. Simulated / demo data\" (#demo > div.wrap > div.section-heading:nth-of-type(1))\n\"Make your case. Try the process. No wallet needed.\" (#demo > div.wrap > div.section-heading:nth-of-type(1) > div)\n\"Try the process. No wallet needed.\" (div.wrap > div.section-heading:nth-of-type(1) > div > p)\n\u2026 7 more"
+    },
+    {
+      "name": "repetition",
+      "passed": false,
+      "exitCode": 1,
+      "durationMs": 2,
+      "output": "2 lines shown more than once:\n2\u00d7 \"buying is open selling needs a plea\"\n2\u00d7 \"diamond hands very human bills\""
+    },
+    {
+      "name": "copy-budget",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 1,
+      "output": "prose on the first screen: 23 words at 390 (bar 60), 29 at 1440 (bar 90)\nall words on the first screen: 62 at 390, 88 at 1440\nwhole page: 930 words, 336 of them prose"
+    },
+    {
+      "name": "chrome",
+      "passed": false,
+      "exitCode": 1,
+      "durationMs": 0,
+      "output": "border and shadow together: 22 (body > header.site-header > div.header-inner:nth-of-type(1) > a.logo; #wallet-trigger; section.hero.wrap:nth-of-type(1) > div.hero-copy:nth-of-type(1) > div.hero-actions:nth-of-type(1) > a.button.orange:nth-of-type(1))\ncards inside cards: 0\ngradient text: 0"
+    },
+    {
+      "name": "motion",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 0,
+      "output": "transition: all on 0 elements\nendless animations: 1; still running with reduced motion: 0"
+    },
+    {
+      "name": "share",
+      "passed": true,
+      "exitCode": 0,
+      "durationMs": 0,
+      "output": "title \"PLEA ($PLEA) \u00b7 Buying is open. Selling needs a plea.\", favicon, og:title, og:image, description"
+    }
+  ]
+}

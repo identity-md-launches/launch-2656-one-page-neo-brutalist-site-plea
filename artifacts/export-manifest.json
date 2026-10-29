@@ -1,0 +1,69 @@
+{
+  "export": [
+    {
+      "path": "dist/index.html",
+      "bytes": 507210,
+      "sha256": "d0e83f9069d830bf44983f23656801acd7c4eb8187f11987ffd2cd9cc6354369"
+    },
+    {
+      "path": "dist/share.png",
+      "bytes": 47671,
+      "sha256": "e8d9921ced59d14973484b1131dde913fd38141ed62fb8b9f39e151fe2e8a51b"
+    }
+  ],
+  "budget": {
+    "maximumBytes": 8388608,
+    "method": "Conservative sum of complete repository delivery files, including unchanged source/assets and this manifest; excludes pinned inputs and ignored scratch/cache outputs.",
+    "totalDeliveryBytes": 1291886,
+    "changedOrNewFilesBytes": 1029845,
+    "remainingBytes": 7096722
+  },
+  "deliveryPaths": [
+    ".gitignore",
+    "DESIGN.md",
+    "README.md",
+    "artifacts/checks.json",
+    "artifacts/design-guidance-LICENSE.txt",
+    "artifacts/export-manifest.json",
+    "artifacts/screenshots/copied-390.png",
+    "artifacts/screenshots/copy-fallback-390.png",
+    "artifacts/screenshots/mobile-390.png",
+    "artifacts/screenshots/viewport-1440.png",
+    "artifacts/screenshots/viewport-320.png",
+    "artifacts/taste-checks.json",
+    "artifacts/validation.md",
+    "dist/index.html",
+    "dist/share.png",
+    "package-lock.json",
+    "package.json",
+    "scripts/build.mjs",
+    "scripts/preview.mjs",
+    "scripts/share-card.mjs",
+    "scripts/toolchain.mjs",
+    "scripts/typecheck.mjs",
+    "scripts/validate.mjs",
+    "src/assets/IBM-Plex-Mono-OFL.txt",
+    "src/assets/Inter-OFL.txt",
+    "src/assets/Space-Grotesk-OFL.txt",
+    "src/assets/ibm-plex-mono-400.woff2",
+    "src/assets/ibm-plex-mono-600.woff2",
+    "src/assets/inter-variable.woff2",
+    "src/assets/share.png",
+    "src/assets/space-grotesk-700.woff2",
+    "src/contract.ts",
+    "src/index.html",
+    "src/main.ts",
+    "src/scoring.ts",
+    "src/style.css",
+    "src/wallet.ts",
+    "tsconfig.json"
+  ],
+  "protectedPathChanges": [],
+  "generatedDependencyOrArchivePaths": [],
+  "submodules": false,
+  "ignoreFile": {
+    "modified": true,
+    "bytes": 208,
+    "explicitBudgetBytes": 256
+  }
+}
